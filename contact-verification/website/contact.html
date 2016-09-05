@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Contact | Test Center</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link href="css/testicon.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom Fonts -->
+    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+</head>
+
+<body>
+ <!-- <body  onload='document.Customer.tel.focus()'>    to check for tel no-->
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">Testicon</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li><a href="my-page.html">My Page</a>
+                    </li>
+                    <li>
+                        <a href="find-test.html">Find Test</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li  class="active">
+                        <a href="contact.html">Contact</a>
+                    </li>
+
+                    
+                    <!-- form search -->  
+                    <form class="navbar-form navbar-left">
+                    <div class="form-group has-feedback">
+                    <label for="search" class="sr-only">Search</label>
+                        <input type="text" class="form-control" name="search" id="search" placeholder="search">
+                        <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                    </div>
+                    </form><!-- End form search -->   
+
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+                    <ul class="nav navbar-nav navbar-right">   
+                    <li><a href="#myModal" data-toggle="modal">Sign Up <span class="glyphicon glyphicon-pencil"></span></a></li><!-- Button trigger modal -->
+                    <li><a href="#login-modal" data-toggle="modal">Login <span class="glyphicon glyphicon-log-in"></span></a></li><!-- End Button trigger modal -->
+                </ul>
+                        
+                </ul>
+
+
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <!-- Main content Section --><!-- Page Content -->
+    <div class="container">
+
+        <!-- Page Heading/Breadcrumbs -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">Contact
+                    <!--<small> - Events & Reminders</small>-->
+                </h1>
+                <ol class="breadcrumb">
+                    <li><a href="index.html">Home</a>
+                    </li>
+                    <li class="active">Contact</li>
+                </ol>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Main Content -->
+        
+        <div class="container-fluid bg-grey">
+  
+  <div class="row">
+    <div class="col-sm-5">
+      
+      <p><span class="glyphicon glyphicon-map-marker"></span> Södergatan 24, 211 34 Malmö</p>
+      <p><span class="glyphicon glyphicon-phone"></span> +46 000 000 000</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> email@something.com</p>
+
+         <ul class="list-unstyled list-inline list-social-icons">
+                    <li>
+                        <a href="#"><i class="fa fa-facebook-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-linkedin-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-twitter-square fa-2x"></i></a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-google-plus-square fa-2x"></i></a>
+                    </li>
+                </ul>
+
+
+<!-- call google map -->
+<div id="googleMap" style="height:330px;width:90%;"></div>
+
+<!-- Add Google Maps -->
+<script src="http://maps.googleapis.com/maps/api/js"></script>
+<script>
+var myCenter = new google.maps.LatLng(55.604385, 13.001410);
+
+function initialize() {
+var mapProp = {
+center:myCenter,
+ zoom:12,
+scrollwheel:false,
+draggable:false,
+ mapTypeId:google.maps.MapTypeId.ROADMAP
+};
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+position:myCenter,
+});
+
+ marker.setMap(map);
+}
+
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+<!-- End call google map -->
+ <!-- use 'required' to verify that important fields are filled : first-name, last-name, place, tel, email   -->
+    </div>
+    <div class="col-sm-7">
+      <div class="row">
+        <form name="Customer" action="" method="POST" onsubmit="return VerifyData()">      <!-- POST to check required fields -->
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="first-name" name="first-name" placeholder="First Name" type="text" required >
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="last-name" name="last-name" placeholder="Last Name" type="text" required >
+        </div>
+
+
+<div class="col-sm-6 form-group">
+          <input class="form-control" id="title" name="title" placeholder="Title" type="text" >
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="company" name="company" placeholder="Company" type="text">
+        </div>
+
+
+<div class="col-sm-6 form-group">
+          <input class="form-control" id="place"  name="place" placeholder="Place" type="text" required>
+        </div>
+
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="tel" name="tel" placeholder="Telephone Number [xxxxxxxxxx]" type="number" required  onmouseout="javascript: return checktel();"  >
+            <div class="col-sm-6 form-group" id='restel'></div>
+        </div>
+
+
+<div class="col-sm-12 form-group">
+  
+          <input class="form-control" id="email" name="email" placeholder="Your email" type="text" required onmouseout="javascript: return checkmail();" >
+          
+          <div class="col-sm-12 form-group" id='result'></div> 
+          
+    
+
+        </div>
+
+
+      </div>
+      <textarea class="form-control" id="comments" name="comments" placeholder="Comment" rows="15"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+            <p>Contact us and we'll get back to you within 24 hours.</p> 
+          <button class="btn btn-default pull-right"  type="submit">Send</button>
+         
+        </div>
+      </div> 
+    </div>
+        </form>
+  </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+        <!--/ Main Content -->       
+        <!-- Footer-->     
+        <nav class="navbar navbar-inverse navbar-fixed-bottom">
+            <div class="container-fluid">
+            <p class="navbar-text pull-left">Copyright © 2016 Testicon. All rights Reserverd.</p>
+            </div>
+        </nav>
+    <!-- End Footer-->
+
+    </div>
+    <!-- /.container -->
+
+    <!-- Signup, Login & help (forget password) Modal POPUP-->
+<!-- Modal signup-->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" data-backdrop="static">
+  <div class="modal-dialog">
+		<div class="mymodal-container">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="myModalLabel">Signup <span class="glyphicon glyphicon-pencil"></span></h4>
+        <h6>( Fill out the form to register )</h6>
+       </div>
+      <div class="modal-body">  
+			
+
+
+ <div class="row">
+        <div class="col-xs-6 form-group">
+          <label for="registrationInputName">First Name</label>
+					<input type="text-firstname" class="form-control" id="registrationName" placeholder="Enter your full name">
+        </div>
+        <div class="col-xs-6 form-group">
+          <label for="registrationInputName">Last Name</label>
+					<input type="text-lastname" class="form-control" id="registrationName" placeholder="Enter your full name">
+        </div>
+
+        <div class="col-xs-6 form-group">
+          <label for="registrationInputaddress">Address</label>
+					<input type="text-address" class="form-control" id="registrationaddress" placeholder="Your address">
+        </div>
+        <div class="col-xs-6 form-group">
+          <label for="exampleInputpostcode">Postcode</label>
+					<input type="text-postcode" class="form-control" id="registrationpostcode" placeholder="Postcode">
+        </div>
+            
+         <div class="col-xs-6 form-group">
+            <label for="exampleInputcity">City</label>
+            <input type="text" class="form-control" id="registrationcity" placeholder="Your City">
+        </div>  
+            
+        <div class="col-xs-6 form-group">
+        <label class="control-label" for="selectbasic">Country</label>
+        <select name="selectbasic" class="form-control" id="selectbasic">
+          <option value="1">Option one</option>
+          <option value="2">Sweden</option>
+          <option value="3">Denmark</option>
+          <option value="4">Norway</option>
+          <option value="3">Finland</option>
+        </select>
+      </div>
+      <div class="col-xs-6 form-group">
+          <label for="exampleInputPersonalCodeNumber">Personal code number</label>
+					<input type="text" class="form-control" id="registrationPersonalCodeNumber" placeholder="Personal code number">
+        </div>
+       
+<!-- Multiple Radios (inline) -->
+   <div class="col-xs-6 form-group">
+  <label>Gender</label>
+   </div>
+    <div class="col-xs-6 form-group">
+    <label class="radio-inline" for="radios-0">
+      <input name="radios" id="radios-0" type="radio" checked="checked" value="1">Male</label> 
+    <label class="radio-inline" for="radios-1">
+      <input name="radios" id="radios-1" type="radio" value="2">Female</label> 
+  </div>
+
+      <div class="col-xs-6 form-group">
+          <label for="email">Email address</label>
+					<input type="email" class="form-control" id="email" placeholder="Enter email">
+        </div>
+        <div class="col-xs-6 form-group">
+          <label for="email"> email address</label>
+					<input type="email" class="form-control" id="email" placeholder="Enter email">
+        </div>
+
+       <div class="col-xs-6 form-group">
+            <label for="exampleInputTelephoneNumber">Telephone Nr.</label>
+            <input class="form-control" type="number" id="registrationTelephoneNumber" placeholder="Telephone number">
+        </div>
+        <div class="col-xs-6 form-group">
+          <label for="exampleInputCompany">Company</label>
+					<input type="text" class="form-control" id="registrationCompany" placeholder="Company">
+        </div>
+
+				<div class="col-xs-6 form-group">
+          <label for="exampleInputPassword1">Password</label>
+					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+        </div>
+        <div class="col-xs-6 form-group">
+          <label for="exampleInputPassword1"> Password</label>
+					<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"> 
+        </div>
+
+        </div>
+    
+        <button type="submit"  onclick="javascript: return checkmail();" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+
+      <!--div class="modal-footer">
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div-->
+    </div>
+		</div>
+  </div>
+</div>
+</div>
+<!-- End Modal signup-->
+<!-- Modal login-->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" data-backdrop="static">
+    	  <div class="modal-dialog">
+				<div class="loginmodal-container">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					<h1>Login to Your Account</h1><br>
+				  <form>
+					<input type="text" name="email" placeholder="Email" >
+					<input type="password" name="pass" placeholder="Password">
+          <div class="checkbox">
+            <label>
+            <input name="remember" type="checkbox" value="Remember Me">Remember Me
+            </label>
+        </div>	
+					<input type="submit" name="login" class="login loginmodal-submit" value="Login">
+				  </form>
+				
+				  <div class="login-help">
+					<a href="#" data-toggle="modal" data-target="#myModal2">Forgot Password</a>
+				  </div>
+				</div>
+			</div>
+		  </div>
+<!-- EndModal login-->
+<!-- Modal Help(forget password)-->
+
+<div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content col-md-8 col-md-offset-2">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h5 class="modal-title" id="myModalLabel">Recover Your Account</h5>
+      </div>
+      <div class="modal-body">
+  <!-- Form reset password -->
+
+<h2 class="text-center"><span class="glyphicon glyphicon-lock"></span> Forgot Password?</h2>
+<h6 class="text-center text-muted">You can reset your password here.</h6>
+<br>
+
+
+
+<form class="form">
+   <fieldset>
+   <div class="form-group">
+    <div class="input-group">
+    <span class="input-group-addon"><i class="glyphicon glyphicon-envelope color-blue"></i></span>        
+   <input class="form-control" id="emailInput" required="" onchange="try{setCustomValidity('')}catch(e){}" oninvalid="setCustomValidity('Please enter a valid email address!')" type="email" placeholder="email address">
+</div>
+</div>
+    <div class="form-group">
+    <input class="btn btn-lg btn-primary btn-block" type="submit" value="Reset Password">
+    </div>
+</fieldset>
+</form>
+</div>
+<div class="modal-footer">
+   <button type="button" class="btn btn-success" data-dismiss="modal">Close</button>
+</div>
+</div>
+</div>
+</div>
+
+<!-- End Modal Help(forget password)-->
+
+<!-- End Signup, Login & help (forget password) Modal POPUP-->
+
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="js/bootstrap.min.js"></script>
+
+
+   
+
+
+    <script type="text/javascript"> 
+
+
+
+
+
+//Verifying email id
+        var emailfilter = /^\w+[\+\.\w-]*@([\w-]+\.)*\w+[\w-]*\.([a-z]{2,4}|\d+)$/i ;
+
+   
+
+        function checkmail() { 
+
+            var telnumToCheck = document.getElementById('email').value; 
+
+   
+
+        /*    if ((telnumToCheck == null) || (telnumToCheck == "")) { 
+
+                document.getElementById('result').style.color = "red"; 
+
+                document.getElementById('result').innerHTML = "Please Enter your Email ID"; 
+
+                document.getElementById('email').focus() 
+
+                return false 
+
+            } 
+*/
+   
+
+            var returnval = emailfilter.test(telnumToCheck); 
+
+            if (returnval == false) { 
+
+                document.getElementById('result').style.color = "red"; 
+
+                document.getElementById('result').innerHTML = "** Your email id is not valid. Enter a valid email id.";    
+
+            } 
+
+            else { 
+
+                 document.getElementById('result').style.color = "green"; 
+
+                document.getElementById('result').innerHTML = " "; 
+ 
+            } 
+
+            return false; 
+
+        } 
+
+/*
+        function checktel(inputtxt) {
+
+{
+  var phoneno = /^\d{10}$/;
+  if(inputtxt.value.match(phoneno))
+  {
+      return true;
+  }
+  else
+  {
+     document.getElementById('result').style.color = "red"; 
+
+   document.getElementById('result').innerHTML = "**Not a valid tel no.";
+     return false;
+  }
+  }
+
+
+  
+}
+*/
+
+//Verifying telephone number
+
+        var telfilter = /^\d{10}$/ ;
+
+   
+
+        function checktel() { 
+
+            var telnumToCheck = document.getElementById('tel').value; 
+
+   
+  
+
+            var returnval = telfilter.test(telnumToCheck); 
+
+            if (returnval == false) { 
+
+                document.getElementById('restel').style.color = "red"; 
+
+                document.getElementById('restel').innerHTML = "**Enter valid tel no.";    
+
+            } 
+
+            else { 
+
+                 document.getElementById('restel').style.color = "green"; 
+
+                document.getElementById('restel').innerHTML = " "; 
+ 
+            } 
+
+            return false; 
+
+        } 
+
+
+
+    </script> 
+
+
+    
+
+
+</body>
+
+</html>
